@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const api = new ValorantAPI();
 
-async function getUserInfo(username: string, setLoading: Function, setLabelBotao: Function) {
+async function getUserInfo(username: string, setLoading: Function, setLabelBotao: Function, setUserData: Function) {
     if (username.length > 0 && username.includes('#')) {
         const name = username.split('#')[0];
         const tag = username.split('#')[1];
@@ -36,6 +36,7 @@ async function getUserInfo(username: string, setLoading: Function, setLabelBotao
                     api.getMatchesByPUUID({ puuid: (getAccountResponse.data as any).puuid, region: 'br', size: 10 })
                         .then((getMatchesResponse) => {
                             console.log(getMatchesResponse.data);
+                            setUserData(getMatchesResponse.data);
                             setLoading(false);
                             setLabelBotao('Generate');
                         });
@@ -46,7 +47,8 @@ async function getUserInfo(username: string, setLoading: Function, setLabelBotao
     }
 }
 
-function UserSearch() {
+function UserSearch(props: any) {
+    const { setUserData } = props;
     const [username, setUsername] = useState('LOUD Coreano#LLL'); // debug apenas, remover depois
     const [loading, setLoading] = useState(false);
     const [labelBotao, setLabelBotao] = useState('Generate');
@@ -65,7 +67,7 @@ function UserSearch() {
                             aria-describedby="username-input"
                             onKeyUp={({key}) => {
                             if (key === 'Enter') {
-                                getUserInfo(username, setLoading, setLabelBotao);
+                                getUserInfo(username, setLoading, setLabelBotao, setUserData);
                             }
                             }}
                         />
@@ -73,7 +75,7 @@ function UserSearch() {
                             style={{'width': '150px'}}
                             variant="success"
                             onClick={() => {
-                                getUserInfo(username, setLoading, setLabelBotao);
+                                getUserInfo(username, setLoading, setLabelBotao, setUserData);
                             }}
                             disabled={loading}
                         >

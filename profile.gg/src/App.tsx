@@ -5,11 +5,13 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [username, setUsername] = useState('');
+  const [userData, setUserData] = useState({});
 
   return (
     <div className="App App-header">
-      <UserSearch/>
+      <>
+        <UserSearch setUserData={setUserData}/>
+      </>
     </div>
   );
 }
