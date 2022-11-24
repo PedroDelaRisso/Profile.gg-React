@@ -1,0 +1,1 @@
+run = "cd ./profile.gg; npm start"
