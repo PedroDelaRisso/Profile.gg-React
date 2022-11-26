@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ValorantAPI, { AccountFetchOptions, APIResponse } from 'unofficial-valorant-api';
 import { Button,
     Row,
     Col,
@@ -7,15 +6,25 @@ import { Button,
     Form,
     InputGroup,
 } from 'react-bootstrap';
-import logo from './logo.svg';
+import bind from '../assets/bind.png'
+import '../styles/components.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function BestMap(props:any){
-    const {userData}=props;
+function BestMap(props: any = {}){
+    const { userData, mapName } = props;
     return(
-        <div>
-            <button onClick={()=>console.log(props.userData)}>usfhuashf</button>
-        </div>
+        <>
+            <div className='grid-component'>
+                <img src={bind} className="best-map"></img>
+                <div className="col">
+                    <h1>MELHOR MAPA</h1>
+                    <h2>{mapName}</h2>
+                </div>
+            </div>
+            <div className='grid-component'>
+                <button onClick={()=>console.log(props.userData)}>usfhuashf</button>
+            </div>
+        </>
     )
 }
 
