@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/components.css'
 import trophy from '../assets/trophy.png'
 
-const WinRate = (props: any = {}) => {
+const WinRate = (props) => {
     const { winrate , isEdit, setIsEdit} = props
     return(
         <div className='grid-component' onClick={() => {setIsEdit(true)}}>

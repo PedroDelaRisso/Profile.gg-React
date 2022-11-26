@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/components.css'
 import bodyImg from '../assets/body.png'
 
-const WinRate = (props: any = {}) => {
+const WinRate = (props) => {
     const {head, body, leg, isEdit, setIsEdit} = props
     return(
         <div className='grid-component' onClick={() => {setIsEdit(true)}}>

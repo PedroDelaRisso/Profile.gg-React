@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/components.css'
 import Immortal_3_Rank from '../assets/rank_png/Immortal_3_Rank.png'
 
-const Rank = (props: any = {}) => {
+const Rank = (props) => {
     const { rank, rankName, isEdit, setIsEdit } = props
     return(
         <div className='grid-component' onClick={() => {setIsEdit(true)}}>

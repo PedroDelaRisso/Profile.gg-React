@@ -4,8 +4,8 @@ import skull from "../assets/skull.png"
 import Comp from '../components/Comp';
 
 
-const Kills = (props: any = {}) => {
-    const { abatesTotais, isEdit, setIsEdit } = props
+const Kills = (props) => {
+    const { abatesTotais } = props
     return(
         <div className="grid-component" onClick={() => {setIsEdit(true)}}>
             <img src={skull}></img>
