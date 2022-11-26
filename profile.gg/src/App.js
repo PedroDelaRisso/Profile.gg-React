@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useRef, useEffect  } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Kills from './components/Kills';
@@ -9,23 +9,27 @@ import WinRate from './components/WinRate';
 import BestMap from './components/BestMap'
 import HitLocation from './components/HitLocation'
 import SideBar from './components/SideBar';
+import Comp from './components/Comp';
 
 function App() {
+
+  //const [isEdit, setIsEdit] = useState([false]);
+  const kills = <Kills abatesTotais={45}></Kills>
   return (
     <div className='vh-100 vw-100 d-flex flex-row bg-primary'>
       <SideBar playerName="SantaCleiton"></SideBar>
         <div className='vh-100 d-flex flex-column justify-content-around app' style={{flex:3}}>
           <div className='d-flex flex-row justify-content-around flex-wrap' style={{flex:1}}>
-            <Kills abatesTotais={652}></Kills>
-            <GameTime horas={13} minutos={45}></GameTime>
+            <Comp ></Comp>
+            <Comp ></Comp>
           </div>
           <div className='d-flex flex-row justify-content-around flex-wrap' style={{flex:1}}>
-            <Rank rankName="IMORTAL 3"></Rank>
-            <WinRate winrate={51}></WinRate>
+            <Comp></Comp>
+            <Comp></Comp>
           </div>
           <div className='d-flex flex-row justify-content-around flex-wrap' style={{flex:1}}>
-            <BestMap mapName={"BIND"}></BestMap>
-            <HitLocation head={21} body={55} leg={28}></HitLocation>
+          <Comp></Comp>
+          <Comp></Comp>
           </div>
       </div>
     </div>

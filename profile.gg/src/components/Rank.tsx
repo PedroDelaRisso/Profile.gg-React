@@ -3,9 +3,9 @@ import '../styles/components.css'
 import Immortal_3_Rank from '../assets/rank_png/Immortal_3_Rank.png'
 
 const Rank = (props: any = {}) => {
-    const { rank, rankName } = props
+    const { rank, rankName, isEdit, setIsEdit } = props
     return(
-        <div className='grid-component'>
+        <div className='grid-component' onClick={() => {setIsEdit(true)}}>
             <img src={Immortal_3_Rank}></img>
             <div className="col">
                 <h1>{rankName}</h1>

@@ -3,9 +3,9 @@ import '../styles/components.css'
 import clock from '../assets/clock.png'
 
 const GameTime = (props: any = {}) => {
-    const { horas, minutos } = props
+    const { horas, minutos, isEdit, setIsEdit } = props
     return(
-        <div className='grid-component'>
+        <div className='grid-component' onClick={() => {setIsEdit(true)}}>
             <img src={clock}></img>
             <div className="col">
                 <h1>TEMPO DE JOGO</h1>

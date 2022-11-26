@@ -3,9 +3,9 @@ import '../styles/components.css'
 import trophy from '../assets/trophy.png'
 
 const WinRate = (props: any = {}) => {
-    const { winrate } = props
+    const { winrate , isEdit, setIsEdit} = props
     return(
-        <div className='grid-component'>
+        <div className='grid-component' onClick={() => {setIsEdit(true)}}>
             <img src={trophy}></img>
             <div className="col">
                 <h1>WINRATE:</h1>
