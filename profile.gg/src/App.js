@@ -10,6 +10,7 @@ import HitLocation from "./components/HitLocation";
 import SideBar from "./components/SideBar";
 import UserSearch from "./components/UserSearch";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Comp from "./components/Comp";
 
 function App() {
   const [userData, setUserData] = useState({});
@@ -33,22 +34,22 @@ function App() {
                     className="d-flex flex-row justify-content-around flex-wrap"
                     style={{ flex: 1 }}
                   >
-                    <Kills abatesTotais={652}></Kills>
-                    <GameTime horas={13} minutos={45}></GameTime>
+                    <Comp></Comp>
+                    <Comp></Comp>
                   </div>
                   <div
                     className="d-flex flex-row justify-content-around flex-wrap"
                     style={{ flex: 1 }}
                   >
-                    <Rank rankName="IMORTAL 3"></Rank>
-                    <WinRate winrate={51}></WinRate>
+                    <Comp></Comp>
+                    <Comp></Comp>
                   </div>
                   <div
                     className="d-flex flex-row justify-content-around flex-wrap"
                     style={{ flex: 1 }}
                   >
-                    <BestMap mapName={"BIND"}></BestMap>
-                    <HitLocation head={21} body={55} leg={28}></HitLocation>
+                    <Comp></Comp>
+                    <Comp></Comp>
                   </div>
                 </div>
               </div>
