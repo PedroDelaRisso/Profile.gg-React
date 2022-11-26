@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/components.css'
 import raze from '../assets/raze.png'
 
-const SideBar = (props: any = {}) => {
+const SideBar = (props) => {
     const {playerName} = props
     return(
         <div className='side-bar' style={{flex:1}}>

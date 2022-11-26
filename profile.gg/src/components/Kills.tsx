@@ -3,7 +3,7 @@ import '../styles/components.css'
 import skull from "../assets/skull.png"
 
 
-const Kills = (props: any = {}) => {
+const Kills = (props) => {
     const { abatesTotais } = props
     return(
         <div className="grid-component">

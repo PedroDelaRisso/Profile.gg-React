@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/components.css'
 import clock from '../assets/clock.png'
 
-const GameTime = (props: any = {}) => {
+const GameTime = (props) => {
     const { horas, minutos } = props
     return(
         <div className='grid-component'>
