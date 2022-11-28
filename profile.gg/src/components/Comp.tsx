@@ -192,7 +192,7 @@ const getWinRate = (matches, gameName) => {
            playerRank.name = 'Imortal 3'
           break;
         case 'Radiant':
-           playerRank.image = '../assets/rank_png/Radiant_Rank.png'
+           playerRank.image = './assets/rank_png/Radiant_Rank.png'
            playerRank.name = 'Radiante'
           break;
       }
