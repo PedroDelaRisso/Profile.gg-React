@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef  } from "react";
+import html2canvas from "html2canvas";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Kills from "./components/Kills";
@@ -14,18 +15,43 @@ import Comp from "./components/Comp";
 
 function App() {
   const [userData, setUserData] = useState({});
+  const printRef = useRef();
+  const handleDownloadImage = async (e) => {
+    console.log("dsad",e.target.className);
+    e.target.className += " d-none"
+    const element = printRef.current;
+    const canvas = await html2canvas(element);
+
+    const data = canvas.toDataURL('image/jpg');
+    const link = document.createElement('a');
+
+    if (typeof link.download === 'string') {
+      link.href = data;
+      link.download = 'image.jpg';
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      window.open(data);
+    }
+
+    e.target.className = e.target.className.replace("d-none",'')
+    console.log("Alo",e.target.className);
+  };
   return (
     <>
       <Router>
-        <div className="App">
+        <div className="App" >
           <Routes>
             <Route path="/" element={
               <UserSearch setUserData={setUserData} />
             }>
             </Route>
             <Route path="/profile" element={
-              <div className="vh-100 vw-100 d-flex flex-row bg-primary">
-                <SideBar playerName="SantaCleiton"></SideBar>
+              <div className="vh-100 vw-100 d-flex flex-row bg-primary" ref={printRef}>
+                <SideBar playerName="SantaCleiton" downloadHandle={handleDownloadImage}></SideBar>
+
                 <div
                   className="vh-100 d-flex flex-column justify-content-around app"
                   style={{ flex: 3 }}
