@@ -42,14 +42,14 @@ function App() {
   return (
     <>
       <Router>
-        <div className="App" >
+        <div className="app" >
           <Routes>
             <Route path="/" element={
               <UserSearch setUserData={setUserData} />
             }>
             </Route>
             <Route path="/profile" element={
-              <div className="vh-100 vw-100 d-flex flex-row bg-primary" ref={printRef}>
+              <div className="vh-100 vw-100 d-flex flex-row bg-primary" id="background-profile" ref={printRef}>
                 <SideBar playerName="SantaCleiton" downloadHandle={handleDownloadImage}></SideBar>
 
                 <div

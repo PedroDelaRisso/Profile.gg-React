@@ -6,6 +6,7 @@ import ValorantAPI, {
 import { Button, Row, Col, Container, Form, InputGroup } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/components.css"
 
 const api = new ValorantAPI();
 
@@ -62,47 +63,44 @@ function UserSearch(props: any) {
   const [labelBotao, setLabelBotao] = useState("Generate");
   const navigate = useNavigate();
   return (
-    <>
-      <Container>
-        <Row className="justify-content-center mt-4">
-          <Col md={5}>
-            <InputGroup className="mb-3" size="lg">
-              <InputGroup.Text id="username-input">@</InputGroup.Text>
-              <Form.Control
-                value={username}
-                onChange={(event) => setUsername(event.target.value)}
-                placeholder="Username#TAG"
-                aria-label="Username"
-                aria-describedby="username-input"
-                onKeyUp={({ key }) => {
-                  if (key === "Enter") {
-                    getUserInfo(
-                      username,
-                      setLoading,
-                      setLabelBotao,
-                      setUserData,
-                      navigate)
-                  }}}
-              />
-              <Button
-                style={{ width: "150px" }}
-                variant="success"
-                onClick={() => {
-                  getUserInfo(
-                    username,
-                    setLoading,
-                    setLabelBotao,
-                    setUserData,
-                    navigate)}}
-                disabled={loading}
-              >
-                {labelBotao}
-              </Button>
-            </InputGroup>
-          </Col>
-        </Row>
-      </Container>
-    </>
+    <div id="background-login">
+      <InputGroup className="mb-3 my-input" size="lg">
+        <InputGroup.Text id="username-input">@</InputGroup.Text>
+        <Form.Control
+          value={username}
+          onChange={(event) => setUsername(event.target.value)}
+          placeholder="Username#TAG"
+          aria-label="Username"
+          aria-describedby="username-input"
+          onKeyUp={({ key }) => {
+            if (key === "Enter") {
+              getUserInfo(
+                username,
+                setLoading,
+                setLabelBotao,
+                setUserData,
+                navigate)
+            }
+          }}
+        />
+        <Button
+          style={{ width: "150px" }}
+          variant="success"
+          onClick={() => {
+            getUserInfo(
+              username,
+              setLoading,
+              setLabelBotao,
+              setUserData,
+              navigate)
+          }}
+          disabled={loading}
+        >
+          {labelBotao}
+        </Button>
+      </InputGroup>
+
+    </div>
   );
 }
 
