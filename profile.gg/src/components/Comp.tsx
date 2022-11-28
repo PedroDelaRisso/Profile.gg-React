@@ -10,6 +10,32 @@ import BestMap from './BestMap';
 import HitLocation from './HitLocation'
 import WinRate from './WinRate';
 
+import Ascendente1 from '../assets/rank_png/Ascendant_1_Rank.png'
+import Ascendent2 from '../assets/rank_png/Ascendant_2_Rank.png'
+import Ascendent3 from '../assets/rank_png/Ascendant_3_Rank.png'
+import Bronze1 from '../assets/rank_png/Bronze_1_Rank.png'
+import Bronze2 from '../assets/rank_png/Bronze_2_Rank.png'
+import Bronze3 from '../assets/rank_png/Bronze_3_Rank.png'
+import Diamante1 from '../assets/rank_png/Diamond_1_Rank.png'
+import Diamante2 from '../assets/rank_png/Diamond_2_Rank.png'
+import Diamante3 from '../assets/rank_png/Diamond_3_Rank.png'
+import Ouro1 from '../assets/rank_png/Gold_1_Rank.png'
+import Ouro2 from '../assets/rank_png/Gold_2_Rank.png'
+import Ouro3 from '../assets/rank_png/Gold_3_Rank.png'
+import Imortal1 from '../assets/rank_png/Immortal_1_Rank.png'
+import Imortal2 from '../assets/rank_png/Immortal_2_Rank.png'
+import Imortal3 from '../assets/rank_png/Immortal_3_Rank.png'
+import Ferro1 from '../assets/rank_png/Iron_1_Rank.png'
+import Ferro2 from '../assets/rank_png/Iron_2_Rank.png'
+import Ferro3 from '../assets/rank_png/Iron_3_Rank.png'
+import Platina1 from '../assets/rank_png/Platinum_1_Rank.png'
+import Platina2 from '../assets/rank_png/Platinum_2_Rank.png'
+import Platina3 from '../assets/rank_png/Platinum_3_Rank.png'
+import Radiante from '../assets/rank_png/Radiant_Rank.png'
+import Prata1 from '../assets/rank_png/Silver_1_Rank.png'
+import Prata2 from '../assets/rank_png/Silver_2_Rank.png'
+import Prata3 from '../assets/rank_png/Silver_3_Rank.png'
+
 
 
 const getPlayTime = (userData) => {
@@ -96,109 +122,110 @@ const getWinRate = (matches, gameName) => {
     if(player) {
       switch (player.currenttier_patched) {
         case 'Iron 1':
-           playerRank.image = '../assets/rank_png/Iron_1_Rank.png'
+           playerRank.image = Ferro1
            playerRank.name = 'Ferro 1'
           break;
         case 'Iron 2':
-           playerRank.image = '../assets/rank_png/Iron_2_Rank.png'
+           playerRank.image = Ferro2
            playerRank.name = 'Ferro 2'
           break;
         case 'Iron 3':
-           playerRank.image = '../assets/rank_png/Iron_3_Rank.png'
+           playerRank.image = Ferro3
            playerRank.name = 'Ferro 3'
           break;
         case 'Bronze 1':
-           playerRank.image = '../assets/rank_png/Bronze_1_Rank.png'
+           playerRank.image = Bronze1
            playerRank.name = 'Bronze 1'
           break;
         case 'Bronze 2':
-           playerRank.image = '../assets/rank_png/Bronze_2_Rank.png'
+           playerRank.image = Bronze2
            playerRank.name = 'Bronze 2'
           break;
         case 'Bronze 3':
-           playerRank.image = '../assets/rank_png/Bronze_3_Rank.png'
+           playerRank.image = Bronze3
            playerRank.name = 'Bronze 3'
           break;
         case 'Silver 1':
-           playerRank.image = '../assets/rank_png/Silver_1_Rank.png'
+           playerRank.image = Prata1
            playerRank.name = 'Prata 1'
           break;
         case 'Silver 2':
-           playerRank.image = '../assets/rank_png/Silver_2_Rank.png'
+           playerRank.image = Prata2
            playerRank.name = 'Prata 2'
           break;
         case 'Silver 3':
-           playerRank.image = '../assets/rank_png/Silver_3_Rank.png'
+           playerRank.image = Prata3
            playerRank.name = 'Prata 3'
           break;
         case 'Gold 1':
-           playerRank.image = '../assets/rank_png/Gold_1_Rank.png'
+           playerRank.image = Ouro1
            playerRank.name = 'Ouro 1'
           break;
         case 'Gold 2':
-           playerRank.image = '../assets/rank_png/Gold_2_Rank.png'
+           playerRank.image = Ouro2
            playerRank.name = 'Ouro 2'
           break;
         case 'Gold 3':
-           playerRank.image = '../assets/rank_png/Gold_3_Rank.png'
+           playerRank.image = Ouro3
            playerRank.name = 'Ouro 3'
           break;
         case 'Platinum 1':
-           playerRank.image = '../assets/rank_png/Platinum_1_Rank.png'
+           playerRank.image = Platina1
            playerRank.name = 'Platina 1'
           break;
         case 'Platinum 2':
-           playerRank.image = '../assets/rank_png/Platinum_2_Rank.png'
+           playerRank.image = Platina2
            playerRank.name = 'Platina 2'
           break;
         case 'Platinum 3':
-           playerRank.image = '../assets/rank_png/Platinum_3_Rank.png'
+           playerRank.image = Platina3
            playerRank.name = 'Platina 3'
           break;
         case 'Diamond 1':
-           playerRank.image = '../assets/rank_png/Diamond_1_Rank.png'
+           playerRank.image = Diamante1
            playerRank.name = 'Diamante 1'
           break;
         case 'Diamond 2':
-           playerRank.image = '../assets/rank_png/Diamond_2_Rank.png'
+           playerRank.image = Diamante2
            playerRank.name = 'Diamante 2'
           break;
         case 'Diamond 3':
-           playerRank.image = '../assets/rank_png/Diamond_3_Rank.png'
+           playerRank.image = Diamante3
            playerRank.name = 'Diamante 3'
           break;
         case 'Ascendant 1':
-           playerRank.image = '../assets/rank_png/Ascendant_1_Rank.png'
+           playerRank.image = Ascendente1
            playerRank.name = 'Ascendente 1'
           break;
         case 'Ascendant 2':
-           playerRank.image = '../assets/rank_png/Ascendant_2_Rank.png'
+           playerRank.image = Ascendent2
            playerRank.name = 'Ascendente 2'
           break;
         case 'Ascendant 3':
-           playerRank.image = '../assets/rank_png/Ascendant_3_Rank.png'
+           playerRank.image = Ascendent3
            playerRank.name = 'Ascendente 3'
           break;
         case 'Immortal 1':
-           playerRank.image = '../assets/rank_png/Immortal_1_Rank.png'
+           playerRank.image = Imortal1
            playerRank.name = 'Imortal 1'
           break;
         case 'Immortal 2':
-           playerRank.image = '../assets/rank_png/Immortal_2_Rank.png'
+           playerRank.image = Imortal2
            playerRank.name = 'Imortal 2'
           break;
         case 'Immortal 3':
-           playerRank.image = '../assets/rank_png/Immortal_3_Rank.png'
+           playerRank.image = Imortal3
            playerRank.name = 'Imortal 3'
           break;
         case 'Radiant':
-           playerRank.image = './assets/rank_png/Radiant_Rank.png'
+           playerRank.image = Radiante
            playerRank.name = 'Radiante'
           break;
       }
 
-      return playerRank
+      
     }
+    return playerRank
   }
 
 const Comp = (props: any = {}) => {
@@ -222,7 +249,7 @@ const Comp = (props: any = {}) => {
 
     const kills = <Kills abatesTotais={totalKills} setIsEdit={setIsEdit}></Kills>
     const gametime = <GameTime horas={playtime.hours} minutos={playtime.minutes} setIsEdit={setIsEdit}></GameTime>
-    const rank = <Rank rank={playerRank?.image} rankName={playerRank?.name} setIsEdit={setIsEdit}></Rank>
+    const rank = <Rank rank={playerRank.image} rankName={playerRank.name} setIsEdit={setIsEdit}></Rank>
     const winrate = <WinRate winrate={winratePerc} setIsEdit={setIsEdit}></WinRate>
     const bestmap = <BestMap mapName={"BIND"} setIsEdit={setIsEdit}></BestMap>
     const hitlocation = <HitLocation head={Math.round((hitData.headShots/hitData.totalShots)*100)} body={Math.round((hitData.bodyShots/hitData.totalShots)*100)} leg={Math.round((hitData.legShots/hitData.totalShots)*100)} setIsEdit={setIsEdit}></HitLocation>
