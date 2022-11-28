@@ -57,8 +57,8 @@ async function getUserInfo(
 }
 
 function UserSearch(props: any) {
-  const { setUserData } = props;
-  const [username, setUsername] = useState("LOUD Coreano#LLL"); // debug apenas, remover depois
+  const { setUserData,username, setUsername } = props;
+  
   const [loading, setLoading] = useState(false);
   const [labelBotao, setLabelBotao] = useState("Generate");
   const navigate = useNavigate();
