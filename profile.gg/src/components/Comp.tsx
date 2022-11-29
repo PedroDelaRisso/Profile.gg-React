@@ -134,7 +134,7 @@ const getPlayerRank = (matches, gameName) => {
 
     playerRank.image = (images)[`${rank}_${number}_Rank.png`];
   }
-  playerRank.name = player.currenttier_patched;
+  playerRank.name = (player.currenttier_patched as string).toUpperCase();
 
   return playerRank
 }
