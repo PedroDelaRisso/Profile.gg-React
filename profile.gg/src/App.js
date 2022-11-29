@@ -24,13 +24,15 @@ function App() {
     e.target.className += " d-none"
     const element = printRef.current;
     const canvas = await html2canvas(element);
+    let [player_name, tag] = username.split('#');
+    player_name = player_name.replace(' ', '_');
 
     const data = canvas.toDataURL('image/jpg');
     const link = document.createElement('a');
 
     if (typeof link.download === 'string') {
       link.href = data;
-      link.download = 'image.jpg';
+      link.download = `profile.gg_${player_name}.jpg`;
 
       document.body.appendChild(link);
       link.click();
