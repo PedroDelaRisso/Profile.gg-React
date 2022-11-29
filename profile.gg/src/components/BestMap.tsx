@@ -1,36 +1,10 @@
-import ascent from "../assets/maps/ascent.webp";
-import bind from "../assets/maps/bind.webp";
-import breeze from "../assets/maps/breeze.webp";
-import fracture from "../assets/maps/fracture.webp";
-import haven from "../assets/maps/haven.webp";
-import icebox from "../assets/maps/icebox.webp";
-import pearl from "../assets/maps/pearl.webp";
-import split from "../assets/maps/split.webp";
 import "../styles/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import importAll from "../helpers/ImportAll";
 
 function bestMapPath(mapName: string) {
-  const mapUpperCase = mapName.toUpperCase();
-  switch (mapUpperCase) {
-    case "ASCENT":
-      return ascent;
-    case "BIND":
-      return bind;
-    case "BREEZE":
-      return breeze;
-    case "FRACTURE":
-      return fracture;
-    case "HAVEN":
-      return haven;
-    case "ICEBOX":
-      return icebox;
-    case "PEARL":
-      return pearl;
-    case "SPLIT":
-      return split;
-    default:
-      return bind;
-  }
+  const images = importAll(require.context('../assets/maps', false, /\.(png|jpe?g|svg|webp)$/));
+  return (images)[`${mapName.toLowerCase()}.webp`];
 }
 
 function BestMap(props: any = {}) {

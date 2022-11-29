@@ -1,13 +1,7 @@
-import { useState, useRef, useEffect  } from "react";
+import { useState, useRef } from "react";
 import html2canvas from "html2canvas";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Kills from "./components/Kills";
-import GameTime from "./components/GameTime";
-import Rank from "./components/Rank";
-import WinRate from "./components/WinRate";
-import BestMap from "./components/BestMap";
-import HitLocation from "./components/HitLocation";
 import SideBar from "./components/SideBar";
 import UserSearch from "./components/UserSearch";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -23,11 +17,10 @@ function App() {
   const [username, setUsername] = useState("LOUD Coreano#LLL"); // debug apenas, remover depois
   const printRef = useRef();
 
-  
+
 
 
   const handleDownloadImage = async (e) => {
-    console.log("dsad",e.target.className);
     e.target.className += " d-none"
     const element = printRef.current;
     const canvas = await html2canvas(element);
@@ -46,8 +39,7 @@ function App() {
       window.open(data);
     }
 
-    e.target.className = e.target.className.replace("d-none",'')
-    console.log("Alo",e.target.className);
+    e.target.className = e.target.className.replace("d-none", '')
   };
   return (
     <>

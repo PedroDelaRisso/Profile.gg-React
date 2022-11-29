@@ -1,7 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/components.css'
+import '../styles/components.css';
+import importAll from '../helpers/ImportAll';
 import { Button } from 'react-bootstrap';
 
+const getAgentPath = (agentName: string) => {
+  const images = importAll(require.context('../assets/agents', false, /\.(png|jpe?g|svg|webp)$/));
+  return (images)[`${agentName.toLowerCase()}.webp`];
+}
 
 const getMostPlayedAgent = (matches,gameName) => {
     const charactersPlayed = (matches.map((m) => m.players?.all_players?.filter((p) => gameName.includes(p.name)).map((p) => ({ character: p.character, assets: p.assets })))  ).flat();
@@ -26,21 +31,19 @@ const getMostPlayedAgent = (matches,gameName) => {
         agentImg:maxImage
     }
   
-    console.log(JSON.stringify(obj));
-    
-    return obj
+    return obj;
   }
 
 const SideBar = (props) => {
     const {playerName, userData, downloadHandle} = props
     const agent = getMostPlayedAgent(userData, playerName)
-    
+
     return(
         <div className='side-bar' style={{flex:1}}>
         <div className='align-items-center vh-100 d-flex flex-column justify-content-around'>
             <span className='font-weight-bold h1'>{playerName.split('#')[0]}</span>
-            <img src={agent.agentImg} className='char-img'></img>
-            <span className='font-weight-bold h1'>{agent.agent}</span>
+            <img src={getAgentPath(agent.agent)} className='char-img'></img>
+            <span className='font-weight-bold h1' style={{'color':'#eee'}}>{agent.agent}</span>
             <Button variant="danger" onClick={downloadHandle}>Download</Button>
         </div>
     </div>

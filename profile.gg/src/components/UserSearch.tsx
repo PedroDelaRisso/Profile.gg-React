@@ -24,13 +24,11 @@ async function getUserInfo(
       name,
       tag,
     };
-    console.log(accountFetchOptions);
     setLoading(true);
     setLabelBotao("...");
     api.getAccount(accountFetchOptions).then((getAccountResponse) => {
       if (getAccountResponse.error) {
         (getAccountResponse.error as any).forEach((error) => {
-          console.log(error.message);
           setLoading(false);
           setLabelBotao("Generate");
         });
@@ -43,7 +41,6 @@ async function getUserInfo(
             size: 10,
           })
           .then((getMatchesResponse) => {
-            console.log(getMatchesResponse.data);
             setUserData(getMatchesResponse.data);
             setLoading(false);
             setLabelBotao("Generate");
@@ -51,8 +48,6 @@ async function getUserInfo(
           });
       }
     });
-  } else {
-    console.log("Digita um trem válido por favor :/");
   }
 }
 
